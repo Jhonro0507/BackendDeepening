@@ -1,7 +1,4 @@
-import java.util.Scanner;
-
 public class Banco {
-    Scanner sc = new Scanner(System.in);
     // Atributos
     private Cuenta cuenta1;
     private Cuenta cuenta2;
