@@ -14,4 +14,4 @@ Dentro de este bucle, se capturan los datos de cada velero y yate bajo el mando 
 
 Finalmente, se imprime un resumen de la flota total, incluyendo el número total de veleros, yates y el total general de embarcaciones. Luego se llama al método `informe()` para mostrar un informe detallado de capitanes, yates y veleros con sus atributos.
 
-
+![](https://github.com/Jhonro0507/BackendDeepening/blob/main/Workshop1_POO/src/EjercicioEmbarcaciones/Workshop1_POO.drawio.png)
