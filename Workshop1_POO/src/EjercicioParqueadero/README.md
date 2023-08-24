@@ -10,4 +10,4 @@ Si el usuario no desea parquear más carros (ingresa un número distinto de "1")
 
 En resumen, este código crea un programa que permite a los usuarios simular el parqueo de carros en un parqueadero virtual, registrando la información de los carros, calculando los costos y mostrando el estado del parqueadero.
 
-![](https://github.com/Jhonro0507/BackendDeepening/blob/main/Workshop1_POO/src/EjercicioEmbarcaciones/Workshop1_POO.drawio.png)
+![](https://github.com/Jhonro0507/BackendDeepening/blob/main/Workshop1_POO/src/EjercicioParqueadero/Workshop1_POO_EjercicioParqueadero.drawio.png)
