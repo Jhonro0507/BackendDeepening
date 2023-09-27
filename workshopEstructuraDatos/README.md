@@ -26,6 +26,6 @@ A continuación, se explican los principales componentes y la lógica del códig
 Al ejecutar las pruebas unitarias definidas en una clase llamada `HtmlValidatorTest` utilizando JUnitCore, se calcula la cantidad de pruebas que pasaron y la cantidad de pruebas que fallaron. Si todas las pruebas pasaron (es decir, no hubo pruebas fallidas), muestra un mensaje que indica que el puntaje para la asignación es del 100%.
 
 <p align="center">
-  <img src="url_de_la_imagen" alt="Descripción de la imagen">
+  <img src="https://github.com/Jhonro0507/BackendDeepening/blob/main/workshopEstructuraDatos/Screen%20Shot%202023-09-26%20at%2011.18.19%20PM.png" alt="Captura de pantalla de la consola con los resultados de las pruebas unitarias">
 </p>
 
