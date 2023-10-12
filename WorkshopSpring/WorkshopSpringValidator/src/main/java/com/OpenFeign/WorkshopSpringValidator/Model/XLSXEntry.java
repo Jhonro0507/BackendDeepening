@@ -1,18 +1,17 @@
 package com.OpenFeign.WorkshopSpringValidator.Model;
 
-import lombok.Getter;
+import lombok.Data;
 
+@Data
 public class XLSXEntry {
 
     private String date;
-    @Getter
     private String injuryLocation;
     private String gender;
     private String ageGroup;
     private String incidentType;
     private String daysLost;
     private String plant;
-    @Getter
     private String reportType;
     private String shift;
     private String department;

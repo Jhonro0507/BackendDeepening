@@ -1,19 +1,17 @@
 package com.OpenFeign.WorkshopSpringValidator.Model;
 
-import lombok.Getter;
+import lombok.Data;
 
+@Data
 public class CSVEntry {
     private Integer index;
     private String userId;
     private String firstName;
     private String lastName;
     private String sex;
-    @Getter
     private String email;
     private String phone;
-    @Getter
     private String dateOfBirth;
-    @Getter
     private String jobTitle;
 
     public CSVEntry(Integer index, String userId, String firstName, String lastName, String sex, String email, String phone, String dateOfBirth, String jobTitle) {

@@ -1,31 +1,22 @@
 package com.OpenFeign.WorkshopSpringProcessor.Model;
 
-import lombok.Getter;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Data;
 
+@Data
 public class Entry {
-    @Getter
-    private String type; // La propiedad que contiene el tipo (CSV o XLSX)
+    private String type;
     private XLSXEntry entryXLSXData;
     private CSVEntry entryCSVData;
 
-    public Entry(String type, XLSXEntry entryXLSXData) {
+    @JsonCreator
+    public Entry(
+            @JsonProperty("type") String type,
+            @JsonProperty("entryXLSXData") XLSXEntry entryXLSXData,
+            @JsonProperty("entryCSVData") CSVEntry entryCSVData) {
         this.type = type;
         this.entryXLSXData = entryXLSXData;
-    }
-
-    public Entry(String type, CSVEntry entryCSVData) {
-        this.type = type;
         this.entryCSVData = entryCSVData;
     }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-    public XLSXEntry getEntryXLSXData() {
-        return entryXLSXData;
-    }
-    public CSVEntry getEntryCSVData() {
-        return entryCSVData;
-    }
-
 }

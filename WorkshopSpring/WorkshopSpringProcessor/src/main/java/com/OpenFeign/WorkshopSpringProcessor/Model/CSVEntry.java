@@ -1,25 +1,16 @@
 package com.OpenFeign.WorkshopSpringProcessor.Model;
 
-import lombok.Getter;
-
+import lombok.Data;
+@Data
 public class CSVEntry {
-    @Getter
     private Integer index;
-    @Getter
     private String userId;
-    @Getter
     private String firstName;
-    @Getter
     private String lastName;
-    @Getter
     private String sex;
-    @Getter
     private String email;
-    @Getter
     private String phone;
-    @Getter
     private String dateOfBirth;
-    @Getter
     private String jobTitle;
     public CSVEntry(String[] record) {
         this.index = Integer.parseInt(record[0]);
