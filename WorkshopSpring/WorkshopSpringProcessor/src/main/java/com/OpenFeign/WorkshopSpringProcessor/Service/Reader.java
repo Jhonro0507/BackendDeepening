@@ -5,14 +5,16 @@ import com.OpenFeign.WorkshopSpringProcessor.Model.XLSXEntry;
 import com.opencsv.exceptions.CsvValidationException;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.apache.poi.ss.util.NumberToTextConverter;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
+import org.springframework.stereotype.Component;
+
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-
+@Component
 public class Reader {
 
     public List<Entry> readCSVOrXLSX(String filePath) throws IOException, CsvValidationException {

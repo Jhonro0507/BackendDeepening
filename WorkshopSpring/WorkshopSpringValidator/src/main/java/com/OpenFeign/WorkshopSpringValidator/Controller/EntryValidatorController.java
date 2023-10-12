@@ -41,4 +41,10 @@ public class EntryValidatorController {
             return false; // Manejar otros casos, si es necesario
         }
     }
+    private int validEntryCount = 0; // Variable para almacenar el recuento de entradas válidas
+
+    @PostMapping("/countValidEntries")
+    public void countValidEntries(@RequestBody int count) {
+        validEntryCount += count;
+    }
 }
