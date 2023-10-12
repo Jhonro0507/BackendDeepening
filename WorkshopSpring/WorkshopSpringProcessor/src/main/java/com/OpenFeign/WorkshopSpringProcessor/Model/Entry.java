@@ -1,4 +1,4 @@
-package com.OpenFeign.WorkshopSpringValidator.Model;
+package com.OpenFeign.WorkshopSpringProcessor.Model;
 
 import lombok.Getter;
 
@@ -8,6 +8,15 @@ public class Entry {
     private XLSXEntry entryXLSXData;
     private CSVEntry entryCSVData;
 
+    public Entry(String type, XLSXEntry entryXLSXData) {
+        this.type = type;
+        this.entryXLSXData = entryXLSXData;
+    }
+
+    public Entry(String type, CSVEntry entryCSVData) {
+        this.type = type;
+        this.entryCSVData = entryCSVData;
+    }
 
     public void setType(String type) {
         this.type = type;
@@ -20,4 +29,3 @@ public class Entry {
     }
 
 }
-

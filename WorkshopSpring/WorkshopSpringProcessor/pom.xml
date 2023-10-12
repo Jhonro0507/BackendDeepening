@@ -27,6 +27,26 @@
 			<artifactId>spring-cloud-starter-openfeign</artifactId>
 		</dependency>
 
+		<!-- Apache POI para trabajar con archivos XLSX -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>5.1.0</version> <!-- Utiliza la última versión disponible -->
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>5.1.0</version> <!-- Utiliza la última versión disponible -->
+		</dependency>
+
+		<!-- OpenCSV para trabajar con archivos CSV -->
+		<dependency>
+			<groupId>com.opencsv</groupId>
+			<artifactId>opencsv</artifactId>
+			<version>5.5</version> <!-- Utiliza una versión compatible -->
+		</dependency>
+
+
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
