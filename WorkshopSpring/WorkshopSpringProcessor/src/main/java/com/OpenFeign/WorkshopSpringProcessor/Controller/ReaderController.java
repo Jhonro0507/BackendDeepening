@@ -3,7 +3,9 @@ package com.OpenFeign.WorkshopSpringProcessor.Controller;
 
 import com.OpenFeign.WorkshopSpringProcessor.Client.EntryValidatorClient;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.OpenFeign.WorkshopSpringProcessor.Model.Entry;
@@ -26,53 +28,37 @@ public class ReaderController {
         this.entryValidatorClient = entryValidatorClient;
         this.entryProcessor = entryProcessor;
     }
-
     @PostMapping()
-    public ResponseEntity<List<Entry>> processCSVOrXLSX(@RequestBody Map<String, String> requestBody) {
+    public ResponseEntity<String> processCSVOrXLSX(@RequestBody Map<String, String> requestBody) {
         String filePath = requestBody.get("filePath");
-
         try {
             List<Entry> entries = entryProcessor.readCSVOrXLSX(filePath);
 
             // Enviar cada entrada al servicio de validación y contar las válidas
             int validEntryCount = 0;
-            if (entryValidatorClient == null) {
-                // Manejar el caso en el que entryValidatorClient es nulo
-            } else {
+
+            if (entryValidatorClient != null) {
                 for (Entry entry : entries) {
-                    ObjectMapper objectMapper = new ObjectMapper();
-
-                    try {
-                        // Convertir el objeto a JSON
-                        String json = objectMapper.writeValueAsString(entry);
-
-                        // Imprimir el JSON en la consola
-                        System.out.println("JSON a enviar: " + json);
-
-                        // Ahora puedes enviar el JSON al otro servicio
-
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
                     if (entryValidatorClient.validateEntry(entry)) {
                         validEntryCount++;
                     }
                 }
             }
 
-            // Enviar el recuento de entradas válidas al servicio de validación
-            entryValidatorClient.countValidEntries(validEntryCount);
+            return ResponseEntity.ok("Número de líneas válidas: " +
+                    validEntryCount + "\nNúmero de líneas inválidas: " +
+                    (entries.size()-validEntryCount));
 
-            return ResponseEntity.ok(entries);
         } catch (IOException e) {
-            e.printStackTrace();
-            // Manejar el error de E/S
-            return ResponseEntity.status(500).body(null);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error de E/S");
         } catch (CsvValidationException e) {
-            // Manejar el error de validación CSV
-            return ResponseEntity.status(400).body(null);
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Archivo CSV no válido");
+        } catch (Exception e) {
+            // Manejar otras excepciones no especificadas
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error inesperado");
         }
     }
+
 
 }
 

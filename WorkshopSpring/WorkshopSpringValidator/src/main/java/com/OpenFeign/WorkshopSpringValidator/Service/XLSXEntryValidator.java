@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class XLSXEntryValidator {
     public boolean validateXLSXEntry(XLSXEntry xlsxEntry) {
-        return validateInjuryLocation(xlsxEntry.getInjuryLocation()) && validateReportType(xlsxEntry.getReportType());
+        return (validateInjuryLocation(xlsxEntry.getInjuryLocation()) && validateReportType(xlsxEntry.getReportType()));
     }
 
     private boolean validateInjuryLocation(String injuryLocation) {

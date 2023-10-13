@@ -14,7 +14,5 @@ public interface EntryValidatorClient {
     @PostMapping(value = "/validateEntry", consumes = MediaType.APPLICATION_JSON_VALUE)
     boolean validateEntry(@RequestBody Entry entry);
 
-    @PostMapping(value = "/countValidEntries", consumes = MediaType.APPLICATION_JSON_VALUE)
-    int countValidEntries(@RequestBody int validEntryCount);
 }
 
