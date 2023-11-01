@@ -64,3 +64,7 @@ El servicio `XLSXEntryValidator` realiza validaciones específicas para las entr
 - `CSVEntry` y `XLSXEntry` son clases que representan los datos específicos de las entradas CSV y XLSX, respectivamente.
 
 Esta estructura sigue los principios de diseño de una aplicación Spring con un controlador que maneja las solicitudes HTTP, servicios para el procesamiento y validación de datos, y modelos para representar los datos. La comunicación con el servicio de validación externo se realiza a través de Feign, lo que permite una integración sencilla con servicios externos.
+
+<div style="text-align:center;">
+  <img src="https://github.com/Jhonro0507/BackendDeepening/blob/main/WorkshopSpring/Arquitectura.png" alt="Arquitectura">
+</div>
