@@ -206,9 +206,7 @@ _Obtén una lista de habitaciones disponibles para una fecha específica y un ti
 
 - **URL:** `/habitaciones/disponibles/filtradas`
 - **Método HTTP:** `GET`
-- **Parámetros de la Solicitud
-
-:** `fecha` (formato ISO DATE), `tipo` (opcional)
+- **Parámetros de la Solicitud:** `fecha` (formato ISO DATE), `tipo` (opcional)
 - **Respuesta Exitosa:** Lista de habitaciones disponibles filtradas
 - **Respuesta de Error:** Mensaje de error
 
@@ -290,5 +288,3 @@ _Elimina una reserva por su ID._
 - **Método HTTP:** `DELETE`
 - **Respuesta Exitosa:** Mensaje de éxito
 - **Respuesta de Error:** Mensaje de error
-
-Es importante recordar que esta es una documentación básica, y puedes expandirla con detalles adicionales y ejemplos según las necesidades de tu proyecto.
