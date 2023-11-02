@@ -1,6 +1,5 @@
 package com.example.WorkshopJPA.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Min;
