@@ -152,9 +152,9 @@ public class ReservaService {
 
 
 
-    public ResponseEntity<?> obtenerReservaPorId(Long id) {
+    public ResponseEntity<?> obtenerReservaPorId(UUID id) {
         try {
-            Reserva reserva = reservaRepository.findById(id).orElse(null);
+            Reserva reserva = reservaRepository.findByIdReserva(id).orElse(null);
 
             if (reserva != null) {
                 return ResponseEntity.status(HttpStatus.OK).body(reserva);

@@ -19,6 +19,7 @@ import java.util.List;
 
 @Service
 public class Reader {
+
     public List<Entry> readCSVOrXLSX(String filePath) throws IOException, CsvValidationException {
         List<Entry> entries = new ArrayList<>();
 

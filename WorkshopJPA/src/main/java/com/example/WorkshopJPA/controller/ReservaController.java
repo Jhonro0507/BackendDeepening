@@ -26,7 +26,7 @@ public class ReservaController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<?> obtenerReservaPorId(@PathVariable Long id) {
+    public ResponseEntity<?> obtenerReservaPorId(@PathVariable UUID id) {
         return reservaService.obtenerReservaPorId(id);
     }
 
